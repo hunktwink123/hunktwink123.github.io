@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;800&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@hunktwink123 Twitter archive</title>
@@ -14,20 +17,37 @@
       <p>This is a page where you can search many of my tweets, get a link to an archived version, and view all the content in nice, threaded form where applicable. This does not include replies to other people in this archive, so this is just "standalone" tweets and threads.</p>
       <div class="tweet">
         <p id="tabs">
-          <button class="tab active" id="search-tab" onclick="searchTab()">Search</button><button class="tab" id="browse-tab" onclick="browseTab()">Browse</button>
+          <button class="tab active" id="browse-tab" onclick="browseTab()">browse</button>
+          <button class="tab" id="search-tab" onclick="searchTab()">search</button>
         </p>
         <hr class="hr">
-        <p id="loading">Loading search...</p>
-        <div id="search" hidden>
-          <input id="search-input" type="search" />
-          <div id="sorting">Sort by: <button class="sort-button" onclick="sortResults('most-relevant')">most relevant</button> | <button class="sort-button" onclick="sortResults('oldest-first')">oldest first</button> | <button class="sort-button" onclick="sortResults('newest-first')">newest first</button> | <button class="sort-button" onclick="sortResults('most-popular')">most popular</button></div>
-          <div id="output"></div>
-        </div>
         <div id="browse" hidden>
-          <div id="browse-sort">Sort by: <button class="sort-button-browse" onclick="sortResults('oldest-first-browse')">oldest first</button> | <button class="sort-button-browse" onclick="sortResults('newest-first-browse')">newest first</button> | <button class="sort-button" onclick="sortResults('most-popular-browse')">most popular</button></div>
+          <div id="browse-sort">
+            Sort by: 
+            <div id="sort-button-div">
+              <button class="sort-button" onclick="sortResults('most-popular-browse')">most popular</button>
+              <button class="sort-button-browse" onclick="sortResults('oldest-first-browse')">oldest first</button>
+              <button class="sort-button-browse" onclick="sortResults('newest-first-browse')">newest first</button>
+            </div>
+          </div>
           <p id="paging">Page <input id="page-num" type="number" /> of <span id="page-total">...</span> </p>
+          <hr class="search_divider">
           <div id="browse-output"></div>
         </div>
+        <div id="search" hidden>
+          <input id="search-input" type="search" />
+          <div id="sorting">
+            Sort by: 
+            <div id="sort-button-div">
+              <button class="sort-button" onclick="sortResults('most-relevant')">most relevant</button>
+              <button class="sort-button" onclick="sortResults('oldest-first')">oldest first</button>
+              <button class="sort-button" onclick="sortResults('newest-first')">newest first</button>
+              <button class="sort-button" onclick="sortResults('most-popular')">most popular</button>
+            </div>
+          </div>
+          <div id="output"></div>
+        </div>
+        <p id="loading">Loading search...</p>
       </div>
       <p>This site was made with <a href="https://tinysubversions.com/twitter-archive/make-your-own/">this Twitter archiving tool</a>.</p>
     </div>
